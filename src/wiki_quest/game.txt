@@ -1,0 +1,7 @@
+i am wiki-quest game program, i say:
+
+like in conquiztador, i ask players trivia questions
+i fetch wikipedia page and extract 10 random sentences that have numbers in them, i replace numbers with blank
+i show players the sentence, they have 10-20 seconds to answer with the number they think is there
+player whose number is closest or, if equal, who answered faster, wins
+players score points for each question, the overall winner is the player with highest score
