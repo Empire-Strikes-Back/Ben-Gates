@@ -5,8 +5,14 @@
 
  :aliases
  {:repl
-  {:extra-deps {deps-repl/deps-repl {:git/url "https://github.com/empire-strikes-back/deps-repl"
-                                     :sha "8904c39e136aacafc70c3e066856fc87bcdec127"}}}
+  {:extra-deps {deps-repl/deps-repl {:local/root "../libraries/deps-repl"}
+                nrepl/nrepl {:mvn/version "0.8.3"}
+                cider/cid er-nrepl {:mvn/version "0.25.5"}}
+   :main-opts ["-m" "libraries.deps-repl.main"
+               "--init-ns" "wiki-quest.main"
+               "--port" "7788"
+               "--bind" "0.0.0.0"
+               "--middleware" "cider.nrepl/cider-middleware"]}
 
   :main
   {:jvm-opts ["-Dclojure.core.async.pool-size=1" "-Dclojure.compiler.direct-linking=true"]
