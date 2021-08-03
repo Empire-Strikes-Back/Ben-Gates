@@ -4,16 +4,16 @@
         org.clojure/spec.alpha {:mvn/version "0.2.187"}}
 
  :aliases
- {:repl
+ {:main
+  {:jvm-opts ["-Dclojure.core.async.pool-size=1" "-Dclojure.compiler.direct-linking=true"]
+   :main-opts ["-m" "wiki-quest.main"]}
+
+  :repl
   {:extra-deps {deps-repl/deps-repl {:local/root "../libraries/deps-repl"}
                 nrepl/nrepl {:mvn/version "0.8.3"}
-                cider/cid er-nrepl {:mvn/version "0.25.5"}}
+                cider/cider-nrepl {:mvn/version "0.25.5"}}
    :main-opts ["-m" "libraries.deps-repl.main"
                "--init-ns" "wiki-quest.main"
                "--port" "7788"
                "--bind" "0.0.0.0"
-               "--middleware" "cider.nrepl/cider-middleware"]}
-
-  :main
-  {:jvm-opts ["-Dclojure.core.async.pool-size=1" "-Dclojure.compiler.direct-linking=true"]
-   :main-opts ["-m" "wiki-quest.main"]}}}
+               "--middleware" "cider.nrepl/cider-middleware"]}}}
